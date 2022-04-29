@@ -1,5 +1,3 @@
-import React from "react";
-
 export const Weather = ({ result }) => {
   const { name, main } = result;
   const kelvin = 273.15;
