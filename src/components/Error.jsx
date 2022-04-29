@@ -1,3 +1,3 @@
 export const Error = ({ message }) => {
-  return <p>{message}</p>;
+  return <p className="badge bg-danger">{message}</p>;
 };
