@@ -51,8 +51,13 @@
     justify-content: center;
     align-items: center;
     justify-self: center;
+    margin-top: 1rem;
   }
   .button {
     top: 30px;
+  }
+  .form input {
+    display: block;
+    width: 9rem;
   }
 }
