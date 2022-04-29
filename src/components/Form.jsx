@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Error } from "./Error";
+import styles from "./Form.module.css";
 
 // eslint-disable-next-line react/prop-types
 export const Form = ({ find, setFind, setQuery }) => {
   const [error, setError] = useState(false);
 
+  // eslint-disable-next-line react/prop-types
   const { city, country } = find;
 
   const handleChange = (e) => {
@@ -17,6 +19,7 @@ export const Form = ({ find, setFind, setQuery }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // eslint-disable-next-line react/prop-types
     if (city.trim() === "" || country.trim() === "") {
       setError(true);
       return;
@@ -27,31 +30,25 @@ export const Form = ({ find, setFind, setQuery }) => {
 
   return (
     <>
-      <form
-        className="row row-cols-lg-auto g-3 align-items-center"
-        onSubmit={handleSubmit}
-      >
+      <form className={styles.form} onSubmit={handleSubmit}>
         {error ? <Error message="All fields are required" /> : null}
-        <div className="col-12">
+        <div>
           <label htmlFor="city" className="form-label">
             City:
           </label>
-          <div className="col-sm-10">
-            <input
-              type="text"
-              name="city"
-              className="form-control"
-              id="city"
-              value={city}
-              onChange={handleChange}
-            ></input>
-          </div>
+          <input
+            type="text"
+            name="city"
+            className="form-control"
+            id="city"
+            value={city}
+            onChange={handleChange}
+          ></input>
         </div>
-        <div className="col-12">
-          <label htmlFor="country" className="form-label">
-            Country:
-          </label>
-          <div className="col-sm-10">
+
+        <div>
+          <label htmlFor="country">Country:</label>
+          <div>
             <select
               name="country"
               className="form-select"
@@ -69,7 +66,7 @@ export const Form = ({ find, setFind, setQuery }) => {
             </select>
           </div>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className={styles.button}>
           Find Weather
         </button>
       </form>

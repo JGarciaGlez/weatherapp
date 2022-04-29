@@ -1,3 +1,4 @@
+import styles from "./App.module.css";
 import { useEffect, useState } from "react";
 import { Error } from "./components/Error";
 import { Form } from "./components/Form";
@@ -44,14 +45,16 @@ function App() {
 
   return (
     <>
-      <div className="App">
-        <Header title="Weather App" />
-        <div className="form">
-          <div>
-            <Form find={find} setFind={setFind} setQuery={setQuery} />
-          </div>
-          <div>{component}</div>
-        </div>
+      <div className={styles.container}>
+        <header className={styles.header}>
+          <span>
+            <Header title="Weather App" />
+          </span>
+        </header>
+        <section className={styles.app}>
+          <Form find={find} setFind={setFind} setQuery={setQuery} />
+          <span className={styles.data}>{component}</span>
+        </section>
       </div>
     </>
   );

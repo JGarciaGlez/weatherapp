@@ -1,4 +1,6 @@
+// eslint-disable-next-line react/prop-types
 export const Weather = ({ result }) => {
+  // eslint-disable-next-line react/prop-types
   const { name, main } = result;
   const kelvin = 273.15;
 
@@ -6,17 +8,20 @@ export const Weather = ({ result }) => {
   return (
     <>
       <div>{name}</div>
-      <div>{parseFloat(main.temp - kelvin, 10).toFixed(2)}ºC</div>
+      <div>
+        <span>Today &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</span>
+        {parseFloat(main.temp - kelvin, 10).toFixed(2)}ºC
+      </div>
       <div>
         <p>
-          Máx Temp
-          {parseFloat(main.temp_max - kelvin, 10).toFixed(2)}ºC
+          <span>Máx Temp &nbsp;&nbsp;</span>
+          {parseFloat(main.temp_max - kelvin, 10).toFixed(2)} ºC
         </p>
       </div>
       <div>
         <p>
-          Min Temp
-          {parseFloat(main.temp_min - kelvin, 10).toFixed(2)}ºC
+          <span>Min Temp &nbsp;&nbsp; </span>
+          {parseFloat(main.temp_min - kelvin, 10).toFixed(2)} ºC
         </p>
       </div>
     </>
