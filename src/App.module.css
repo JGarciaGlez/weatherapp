@@ -19,6 +19,7 @@
   justify-content: center;
   height: 100%;
 }
+
 .app {
   height: 45rem;
   width: 100%;
@@ -30,15 +31,9 @@
   align-content: center;
   justify-self: center;
   font-size: 35px;
-  background-image: url("./images/weather.jpg");
   background-size: cover;
   padding-bottom: 5rem;
-}
-
-.data {
-  color: wheat;
-  text-align: center;
-  margin-top: 1rem;
+  background-image: url("./images/weatherapp.png");
 }
 
 @media (max-width: 767px) {

@@ -1,0 +1,29 @@
+.data {
+  color: black;
+  text-align: center;
+  margin-top: 1rem;
+  background: rgba(209, 202, 202, 0.73);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(209, 202, 202, 0.29);
+  height: 12rem;
+  width: 100%;
+  padding: 3rem;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  justify-content: center;
+  line-height: 50px;
+}
+
+@media (max-width: 767px) {
+  .data {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}

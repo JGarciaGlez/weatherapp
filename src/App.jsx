@@ -40,7 +40,7 @@ function App() {
   if (error) {
     component = <Error message="Not Results found" />;
   } else {
-    component = <Weather result={result} />;
+    component = <Weather result={result} className={styles.data} />;
   }
 
   return (
@@ -53,7 +53,7 @@ function App() {
         </header>
         <section className={styles.app}>
           <Form find={find} setFind={setFind} setQuery={setQuery} />
-          <span className={styles.data}>{component}</span>
+          <span className={styles.results}>{component}</span>
         </section>
       </div>
     </>
